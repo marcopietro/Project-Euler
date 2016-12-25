@@ -10,3 +10,5 @@ public class problem_1 {
   System.out.println("Answer to problem_1 is: " + sum_counter);
  }
 }
+
+/*Answer to problem_1 is: 233168*/
