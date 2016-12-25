@@ -1,2 +1,12 @@
 /*https://projecteuler.net/problem=1*/
 
+public class problem_1 {
+ public static void main(String args[]) {
+  int sum_counter = 0;
+  for (int i = 0; i < 1000; i++) {
+   if (i % 3 == 0 || i % 5 == 0)
+    sum_counter = sum_counter + i;
+  }
+  System.out.println("Answer to problem_1 is: " + sum_counter);
+ }
+}
