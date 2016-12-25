@@ -1,0 +1,37 @@
+/*https://projecteuler.net/problem=2*/
+
+
+public class problem_2 {
+ public static void main(String args[]) {
+  int[] fibonacci_sequence = get_Fibonacci_Sequence(get_Upper_Bound(4000000));
+  int sum_counter = 0;
+  for (int i = 0; i < fibonacci_sequence.length; i++) {
+   if (fibonacci_sequence[i] % 2 == 0)
+    sum_counter = sum_counter + fibonacci_sequence[i];
+  }
+  System.out.println("Answer to problem_2 is: " + sum_counter);
+ }
+
+ public static int[] get_Fibonacci_Sequence(int index_upper_Bound) {
+  int[] fib_Array = new int[index_upper_Bound];
+  fib_Array[0] = 1;
+  fib_Array[1] = 2;
+  for (int i = 2; i < index_upper_Bound; i++) {
+   fib_Array[i] = fib_Array[i - 1] + fib_Array[i - 2];
+  }
+  return fib_Array;
+ }
+ public static int get_Upper_Bound(int value) {
+  int[] fib_Array_2 = new int[1000000];
+  fib_Array_2[0] = 1;
+  fib_Array_2[1] = 2;
+  int i = 2;
+  while (fib_Array_2[i - 1] < value) {
+   fib_Array_2[i] = fib_Array_2[i - 1] + fib_Array_2[i - 2];
+   i++;
+  }
+  return i;
+ }
+}
+
+/*Answer to problem_2 is: 4613732*/
