@@ -1,0 +1,33 @@
+/*https://projecteuler.net/problem=3*/
+
+import java.util.Scanner;
+public class problem_3 {
+ public static void main(String args[]) {
+  Scanner stdin = new Scanner(System.in);
+  System.out.println("Enter number for which you want the largest prime factor: ");
+  long number = stdin.nextLong();
+  int largest_prime_factor = 1;
+  if (number % 2 == 0)
+   for (int i = 1; i * i <= number; i++) {
+    if (is_Prime(i) == true && number % i == 0)
+     largest_prime_factor = i;
+   }
+  if (number % 2 == 1)
+   for (int i = 1; i * i <= number; i += 2) {
+    if (is_Prime(i) == true && number % i == 0)
+     largest_prime_factor = i;
+   }
+  System.out.println("Answer to problem_3 is: " + largest_prime_factor);
+ }
+ public static boolean is_Prime(long value) {
+  if (value % 2 == 0) /*not prime if divisible by 2*/
+   return false;
+  /* check odds */
+  for (int i = 3; i * i < value; i += 2) {
+   if (value % i == 0)
+    return false;
+  }
+  return true;
+ }
+}
+
