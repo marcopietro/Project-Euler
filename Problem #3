@@ -1,0 +1,26 @@
+/*https://projecteuler.net/problem=3*/
+/*Many thanks to Barinder Singh for guidance on efficient solution.*/
+
+import java.util.Scanner;
+public class problem_3 {
+ public static void main(String args[]) {
+  Scanner stdin = new Scanner(System.in);
+  System.out.println("Enter number for which you want the largest prime factor: ");
+  long number = stdin.nextLong();
+  int value = calcLargestPrimeFactor(number);
+  System.out.println("Answer to problem_3 is: " + value);
+ }
+ public static int calcLargestPrimeFactor(long value) {
+  int prime = 0;
+  for (int i = 2; i <= value; i++) {
+   if (value % i == 0) {
+    value = (value / i);
+   }
+   prime = i;
+  }
+  return prime;
+ }
+}
+
+/*Answer to problem_3 is: 6857*/
+
