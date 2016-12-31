@@ -7,8 +7,15 @@ public class problem_3 {
   Scanner stdin = new Scanner(System.in);
   System.out.println("Enter number for which you want the largest prime factor: ");
   long number = stdin.nextLong();
+  long startTime = System.nanoTime();
   int value = calcLargestPrimeFactor(number);
+  long endTime = System.nanoTime();
   System.out.println("Answer to problem_3 is: " + value);
+  long duration = (endTime - startTime);
+  System.out.println("Solution " + (endTime - startTime) + " nanoseconds");
+  /*divide by 1000000 to get milliseconds.*/
+
+
  }
  public static int calcLargestPrimeFactor(long value) {
   int prime = 0;
@@ -23,4 +30,6 @@ public class problem_3 {
 }
 
 /*Answer to problem_3 is: 6857*/
+/*Answer to problem_3 took 352234 nanoseconds*/
+
 
