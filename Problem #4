@@ -1,0 +1,28 @@
+/*https://projecteuler.net/problem=4*/
+
+public class problem_4 {
+ public static void main(String args[]) {
+  int largestPalindrome = 0;
+  for (int i = 100; i <= 999; i++) {
+   for (int j = 100; j <= 999; j++) {
+    if (isPalindrome(i * j) && (i * j > largestPalindrome)) {
+     largestPalindrome = i * j;
+    }
+
+   }
+  }
+  System.out.println("Answer to problem_4 is: " + largestPalindrome);
+
+ }
+ public static boolean isPalindrome(int value) {
+  String string = Integer.toString(value);
+  for (int i = 0, j = string.length() - 1; i <= j; i++, j--) {
+   if (string.charAt(i) != string.charAt(j)) {
+    return false;
+   }
+  }
+  return true;
+ }
+}
+
+/*Answer to problem_4 is: 906609*/
