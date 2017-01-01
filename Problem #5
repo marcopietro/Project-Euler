@@ -1,0 +1,23 @@
+/*https://projecteuler.net/problem=5*/
+
+public class problem_5 {
+ public static void main(String args[]) {
+  final long upperBound = 1000000000;
+  long answerCounter = upperBound;
+  for (int i = 2520; i < upperBound; i += 20) {
+   if (isDivisible(i) && i < answerCounter) {
+    answerCounter = i;
+    System.out.println("Answer to problem_5 is: " + i);
+   }
+
+  }
+ }
+ public static boolean isDivisible(int value) {
+  if (value % 20 == 0 && value % 19 == 0 && value % 18 == 0 && value % 17 == 0 && value % 16 == 0 && value % 14 == 0 && value % 13 == 0 && value % 12 == 0 && value % 11 == 0) {
+   return true;
+  }
+  return false;
+ }
+}
+
+/*Answer to problem_5 is: 232792560*/
