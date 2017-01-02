@@ -1,24 +1,23 @@
 /*https://projecteuler.net/problem=6*/
 
 import java.util.Scanner;
-public class problem_6 {
- public static void main(String args[]) {
+public class problem_6{
+ public static void main(String args[]){
   Scanner stdin = new Scanner(System.in);
   System.out.println("Enter integer for which you want to know the difference between sum of squares and square of sums: ");
   int bound = stdin.nextInt();
   System.out.println("Sum of squares is: " + sumOfNaturalSquared(bound));
-  System.out.println("Square of sum is: " + sumOfNaturals(bound) * sumOfNaturals(bound));
-  System.out.println("Answer to problem_6 is: " + (sumOfNaturalSquared(bound) - sumOfNaturals(bound) * sumOfNaturals(bound)));
- }
- public static int sumOfNaturals(int n) {
-  int sum = (n * (n + 1)) / 2;
+  System.out.println("Square of sum is: " + sumOfNaturals(bound)*sumOfNaturals(bound));
+  System.out.println("Answer to problem_6 is: " + (sumOfNaturalSquared(bound) - sumOfNaturals(bound)*sumOfNaturals(bound)));
+  }
+ public static int sumOfNaturals(int n){
+  int sum=(n*(n+1))/2;
   return sum;
- }
- public static int sumOfNaturalSquared(int n) {
-  int sum = (n * (n + 1) * (n + 2)) / 6;
+  }
+ public static int sumOfNaturalSquared(int n){
+  int sum=(n*(n+1)*(2*n+1))/6;
   return sum;
+  }
  }
-}
 
-
-/*Answer to problem_6 is: 25330800*/
+/*Answer to problem_6 is: 25164150*/
